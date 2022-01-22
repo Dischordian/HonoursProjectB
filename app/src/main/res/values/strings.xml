@@ -1,0 +1,25 @@
+<resources>
+    <!-- Home -->
+    <string name="app_name">My Application</string>
+
+
+    <!-- 1. Schedule Notifications 2. Work Constraints 3. App Settings -->
+
+
+    <!-- Schedule Notifications -->
+    <string name="title_schedule_notifications">Schedule Notifications</string>
+
+
+    <!-- Work Constraints -->
+    <string name="title_work_constraints">Work Constraints</string>
+
+    <string name="text_input_hint_1">Constraint 1</string>
+    <string name="text_input_hint_2">Constraint 2</string>
+    <string name="text_input_hint_3">Constraint 3</string>
+    <string name="text_input_hint_4">Constraint 4</string>
+
+    <!-- App Settings -->
+    <string name="title_settings">App Settings</string>
+
+
+</resources>
