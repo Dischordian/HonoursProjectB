@@ -13,93 +13,135 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/chip_group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.011" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:chipSpacing="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutConstraintsDistance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_dashboard">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/wCChipMon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/wc_chip_1" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/wCChipTue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/wc_chip_2"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/wCChipWed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/wc_chip_3" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/wCChipThu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/wc_chip_4" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/wCChipFri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/wc_chip_5" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/wCChipSat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/wc_chip_6"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/wCChipSun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/wc_chip_7" />
+
+    </com.google.android.material.chip.ChipGroup>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutConstraints1"
+        android:id="@+id/textInputLayoutConstraintsDistance"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutConstraints2"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutConstraintDimensions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_dashboard">
+        app:layout_constraintTop_toBottomOf="@+id/chip_group">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputConstraints1"
+            android:id="@+id/textInputConstraintDistance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/text_input_hint_1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutConstraints2"
+        android:id="@+id/textInputLayoutConstraintDimensions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutConstraints4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutConstraints1">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutConstraintsDistance">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputConstraints2"
+            android:id="@+id/textInputConstraintsDimensions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/text_input_hint_2" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutConstraints3"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/wc_btn_update"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="328dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="391dp"
+        android:text="@string/wc_btn_update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutConstraints4">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputConstraints3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/text_input_hint_4" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutConstraints4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutConstraints3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutConstraints2">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputConstraints4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/text_input_hint_3" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutConstraintDimensions"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
