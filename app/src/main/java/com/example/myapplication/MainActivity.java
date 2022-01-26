@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -14,11 +17,24 @@ import com.example.myapplication.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Variables for storing basic data in the Constraints Activity
+    static final String STATE_DISTANCE = "Distance";
+    static final String STATE_DIMENSIONS = "Dimensions";
+    private String currentDistance;
+    private String currentDimensions;
+
+    // Buttons & Such
+    Button updateButton;
+    EditText textInputConstraintDistance;
+    EditText textInputConstraintDimensions;
+
     private ActivityMainBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState); // Always call the superclass first.
+        setContentView(R.layout.fragment_work_constraints);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -32,6 +48,40 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        /* Currently causing the program to crash
+        updateButton = (Button)findViewById(R.id.wc_btn_update);
+        updateButton.setOnClickListener(v -> {
+            textInputConstraintDistance = (EditText) findViewById(R.id.wc_et_constraint_distance);
+            textInputConstraintDimensions = (EditText) findViewById(R.id.wc_et_constraint_dimensions);
+            currentDistance = textInputConstraintDistance.toString();
+            currentDimensions = textInputConstraintDimensions.toString();
+            showToast(currentDistance);
+            showToast(currentDimensions);
+
+        });*/
+
     }
 
+    public void showToast(String text){
+        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current constraints
+        savedInstanceState.putString(STATE_DISTANCE, currentDistance);
+        savedInstanceState.putString(STATE_DIMENSIONS, currentDimensions);
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+
+        // Restore state members from saved instance
+         currentDistance = savedInstanceState.getString(STATE_DISTANCE);
+         currentDimensions = savedInstanceState.getString(STATE_DIMENSIONS);
+    }
 }

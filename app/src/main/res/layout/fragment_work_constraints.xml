@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/chip_group">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputConstraintDistance"
+            android:id="@+id/wc_et_constraint_distance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/text_input_hint_1" />
@@ -122,7 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutConstraintsDistance">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputConstraintsDimensions"
+            android:id="@+id/wc_et_constraint_dimensions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/text_input_hint_2" />
