@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        // Seemingly fixed this but not getting intelligible output
+        // This is now working, but the use of the setContentView change is removing access to the
+        // navigation tools. Something to address.
         setContentView(R.layout.fragment_work_constraints);
         updateButton = findViewById(R.id.wc_btn_update);
         updateButton.setOnClickListener(v -> {
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     // The toast function is standing in to indicate that the user inputs are working.
     public void showToast(String text){
-        //Toast.makeText(MainActivity.this, text, Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
         Log.i("currentDistance", "The Current Distance is " + currentDistance);
         Log.i("currentDimensions", "The Current Dimensions are " + currentDimensions);
 
