@@ -54,20 +54,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.fragment_work_constraints);
         updateButton = findViewById(R.id.wc_btn_update);
         updateButton.setOnClickListener(v -> {
-            textInputConstraintDistance = (EditText) findViewById(R.id.wc_et_constraint_distance);
-            textInputConstraintDimensions = (EditText) findViewById(R.id.wc_et_constraint_dimensions);
-            currentDistance = textInputConstraintDistance.toString();
-            currentDimensions = textInputConstraintDimensions.toString();
+            textInputConstraintDistance = findViewById(R.id.wc_et_constraint_distance);
+            textInputConstraintDimensions = findViewById(R.id.wc_et_constraint_dimensions);
+            currentDistance = textInputConstraintDistance.getText().toString();
+            currentDimensions = textInputConstraintDimensions.getText().toString();
             showToast(currentDistance);
             showToast(currentDimensions);
-
         });
 
     }
 
     // The toast function is standing in to indicate that the user inputs are working.
     public void showToast(String text){
-        Toast.makeText(MainActivity.this, text, Toast.LENGTH_LONG).show();
+        //Toast.makeText(MainActivity.this, text, Toast.LENGTH_LONG).show();
         Log.i("currentDistance", "The Current Distance is " + currentDistance);
         Log.i("currentDimensions", "The Current Dimensions are " + currentDimensions);
 
