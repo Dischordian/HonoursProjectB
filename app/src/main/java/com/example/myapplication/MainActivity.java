@@ -49,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        /* Currently causing the program to crash
-        updateButton = (Button)findViewById(R.id.wc_btn_update);
+        // Seemingly fixed this but not getting intelligible output
+        setContentView(R.layout.fragment_work_constraints);
+        updateButton = findViewById(R.id.wc_btn_update);
         updateButton.setOnClickListener(v -> {
             textInputConstraintDistance = (EditText) findViewById(R.id.wc_et_constraint_distance);
             textInputConstraintDimensions = (EditText) findViewById(R.id.wc_et_constraint_dimensions);
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             showToast(currentDistance);
             showToast(currentDimensions);
 
-        });*/
+        });
 
     }
 
