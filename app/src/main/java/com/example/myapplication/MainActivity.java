@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -64,10 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // The toast function is standing in to indicate that the user inputs are working.
     public void showToast(String text){
-        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, text, Toast.LENGTH_LONG).show();
+        Log.i("currentDistance", "The Current Distance is " + currentDistance);
+        Log.i("currentDimensions", "The Current Dimensions are " + currentDimensions);
+
     }
 
+    // The Save Instance State function is intended to store variables for processing.
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current constraints
@@ -78,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
     }
 
+    // The Restore Instance State function is intended to recover variables for modification.
     public void onRestoreInstanceState(Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
 
